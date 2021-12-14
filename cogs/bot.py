@@ -6,11 +6,14 @@ from datetime import date, time, datetime
 from pathlib import Path
 from utils import check
 import os
+from pytz import timezone
 
-date_string = '31-01-2020 14:45:37'
-format_str = '%d-%m-%Y %H:%M:%S'
-datetime.strptime(date_string, format_str)
-now = datetime.now()
+date_now = datetime.now()
+fuso = timezone('America/Sao_Paulo')
+date_2 = date_now.astimezone(fuso)
+hour = data_2.strftime("%H:%M:%S")
+date_now2 = data_2.strftime("%d/%m/%Y")
+
 cluster = MongoClient(os.environ['mongo'])
 data = cluster["discord"]["users"]
   
@@ -35,7 +38,7 @@ class Bot(commands.Cog):
       "11": "Novembro",
       "12": "Dezembro"
     }
-    data = date.today().month
+    data = date_now2.month
     
     if data == 1:
       data = meses['1']
@@ -62,18 +65,16 @@ class Bot(commands.Cog):
     elif data == 12:
       data = meses['12']
     
-    hour = str(datetime.now().hour)
+    hora = hour
     
-    if hour.startswith("0"):
-      hour = hour.replace("0","00")
     embed = discord.Embed(title="Data e Hora | ☀️" if now.hour <= 17 else "Data e Hora | 🌃", color=0xf49e12 if now.hour <= 17 else 0xe6e1d7
     )
     embed.set_thumbnail(url="https://media.discordapp.net/attachments/876156458817978378/919731090455920701/download_1.png")
     embed.add_field(
-      name ="📆 | Data", value="{} de {} de {}".format(date.today().day, data, date.today().year)
+      name ="📆 | Data", value="{} de {} de {}".format(date_now2.day, data, date_now2.year)
       )
     embed.add_field(
-      name = "⏰ | Hora", value= "{}:{}".format(hour, now.minute)
+      name = "⏰ | Hora", value= "{}".format(hora)
       )
     embed.set_footer(text="{} | Hoje às {}:{}".format(ctx.author.id, hour, now.minute), icon_url=ctx.author.avatar_url)
     
