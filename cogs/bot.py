@@ -1,7 +1,6 @@
 import 'moiscord
 from discord.ext import commands, tasks
 from pymongo import MongoClient
-#import config
 from time import sleep
 from datetime import date, time, datetime
 from pathlib import Path
