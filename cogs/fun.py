@@ -1,8 +1,6 @@
 import discord
 from discord.ext import commands
 import random
-#from config import adiction, division, mult, resto, percentage
-from config import potencia, raiz, sub
 from datetime import datetime, date, time, timedelta
 
 class Utility(commands.Cog):
