@@ -1,0 +1,1 @@
+💎 • Any Simple Bot
