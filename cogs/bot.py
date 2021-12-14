@@ -38,7 +38,7 @@ class Bot(commands.Cog):
       "11": "Novembro",
       "12": "Dezembro"
     }
-    data = date_now2.month
+    data = str(date_now2.month)
     
     if data == 1:
       data = meses['1']
