@@ -3,10 +3,6 @@ from discord.ext import commands, tasks
 from discord.ext.commands import AutoShardedBot
 import os
 from manter_vivo import manter_vivo
-import dns.resolver
-
-dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
-dns.resolver.default_resolver.nameservers=['8.8.8.8']
 
 intents = discord.Intents.default()
 intents.members = True
