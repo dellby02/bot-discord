@@ -2,7 +2,6 @@
 import discord
 from discord.ext import commands
 from pymongo import MongoClient
-#import config
 import time
 import random
 import os
