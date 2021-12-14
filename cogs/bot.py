@@ -24,7 +24,7 @@ class Bot(commands.Cog):
     
   @commands.command()
   async def time(self, ctx):
-    meses = {
+    """meses = {
       "1": "Janeiro",
       "2": "Fevereiro",
       "3": "Março",
@@ -38,7 +38,7 @@ class Bot(commands.Cog):
       "11": "Novembro",
       "12": "Dezembro"
     }
-    data = str(date_now2.month)
+    
     
     if data == 1:
       data = meses['1']
@@ -63,15 +63,15 @@ class Bot(commands.Cog):
     elif data == 11:
       data = meses['11']
     elif data == 12:
-      data = meses['12']
+      data = meses['12']"""
     
     hora = hour
-    
+    data = date_now2
     embed = discord.Embed(title="Data e Hora | ☀️" if now.hour <= 17 else "Data e Hora | 🌃", color=0xf49e12 if now.hour <= 17 else 0xe6e1d7
     )
     embed.set_thumbnail(url="https://media.discordapp.net/attachments/876156458817978378/919731090455920701/download_1.png")
     embed.add_field(
-      name ="📆 | Data", value="{} de {} de {}".format(date_now2.day, data, date_now2.year)
+      name ="📆 | Data", value="{}".format(data)
       )
     embed.add_field(
       name = "⏰ | Hora", value= "{}".format(hora)
