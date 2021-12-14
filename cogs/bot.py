@@ -5,6 +5,7 @@ from time import sleep
 from datetime import date, time, datetime
 from pathlib import Path
 from utils import check
+import os
 
 date_string = '31-01-2020 14:45:37'
 format_str = '%d-%m-%Y %H:%M:%S'
