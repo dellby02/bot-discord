@@ -7,7 +7,6 @@ import random
 import os
 from datetime import date, time, datetime, timedelta
 from utils import inc_bal, is_register, rev_bal, rev_coin, check
-# ========================================================== #
 cluster = MongoClient(os.environ['mongo'])
 economy = cluster["discord"]["economy"]
 date_string = '31-01-2020 14:45:37'
@@ -15,8 +14,6 @@ format_str = '%d-%m-%Y %H:%M:%S'
 datetime.strptime(date_string, format_str)
 now = datetime.now()
 
-
-# ========================================================== #
 class Economy(commands.Cog):
   def __init__(self, client):
     self.client = client
