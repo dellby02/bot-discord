@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-import config
 import json
 from pathlib import Path
 
