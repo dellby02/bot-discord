@@ -3,7 +3,6 @@ from discord.ext import commands, tasks
 from discord.ext.commands import AutoShardedBot
 import os
 from manter_vivo import manter_vivo
-#import config
 import dns.resolver
 
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
