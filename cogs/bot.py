@@ -67,7 +67,7 @@ class Bot(commands.Cog):
     
     hora = hour
     data = date_now2
-    embed = discord.Embed(title="Data e Hora | ☀️" if now.hour <= 17 else "Data e Hora | 🌃", color=0xf49e12 if now.hour <= 17 else 0xe6e1d7
+    embed = discord.Embed(title="Data e Hora | ☀️" if hora <= 17 else "Data e Hora | 🌃", color=0xf49e12 if hora <= 17 else 0xe6e1d7
     )
     embed.set_thumbnail(url="https://media.discordapp.net/attachments/876156458817978378/919731090455920701/download_1.png")
     embed.add_field(
@@ -76,7 +76,7 @@ class Bot(commands.Cog):
     embed.add_field(
       name = "⏰ | Hora", value= "{}".format(hora)
       )
-    embed.set_footer(text="{} | Hoje às {}:{}".format(ctx.author.id, hour, now.minute), icon_url=ctx.author.avatar_url)
+    embed.set_footer(text="{} | Hoje às {}".format(ctx.author.id, hora), icon_url=ctx.author.avatar_url)
     
     await ctx.send(embed=embed)
     
