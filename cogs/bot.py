@@ -11,8 +11,8 @@ from pytz import timezone
 date_now = datetime.now()
 fuso = timezone('America/Sao_Paulo')
 date_2 = date_now.astimezone(fuso)
-hour = data_2.strftime("%H:%M:%S")
-date_now2 = data_2.strftime("%d/%m/%Y")
+hour = date_2.strftime("%H:%M:%S")
+date_now2 = date_2.strftime("%d/%m/%Y")
 
 cluster = MongoClient(os.environ['mongo'])
 data = cluster["discord"]["users"]
