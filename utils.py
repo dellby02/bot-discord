@@ -1,8 +1,9 @@
 from pymongo import MongoClient
 import json
 from pathlib import Path
+import os
 
-cluster = MongoClient(config.data_URL)
+cluster = MongoClient(os.environ['mongo'])
 
 economy = cluster["discord"]["economy"]
 
